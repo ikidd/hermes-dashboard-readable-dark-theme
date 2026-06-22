@@ -53,6 +53,30 @@ git apply patches/add-readable-dark-theme.patch
 
 If you only want the YAML file, copy `themes/readable-dark.yaml` directly.
 
+## Hermes Skills Hub package
+
+This repo also includes a self-contained skill package at:
+
+```text
+skillhub/readable-dark-dashboard-theme/
+```
+
+To install it locally from a clone:
+
+```bash
+skillhub/readable-dark-dashboard-theme/scripts/install.sh
+```
+
+To publish or submit it through Hermes Skills Hub tooling:
+
+```bash
+hermes skills publish /absolute/path/to/skillhub/readable-dark-dashboard-theme \
+  --to github \
+  --repo <owner>/<skills-repo>
+```
+
+The published skill includes its own bundled copy of `readable-dark.yaml`, so users do not need this full repository after installing the skill.
+
 ## Verification
 
 ```bash
