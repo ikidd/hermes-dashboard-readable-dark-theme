@@ -4,6 +4,10 @@ A reusable, readability-first dark theme for the Hermes Agent dashboard.
 
 It replaces the default novelty-heavy dashboard look with a neutral slate/blue dark palette, high-contrast text, larger system fonts, visible borders, no grain/noise overlay, and no decorative display fonts.
 
+## Screenshot
+
+![Hermes dashboard readable dark theme overview](screenshots/readable-dark-overview.png)
+
 ## What it changes
 
 - Neutral dark slate surfaces with subtle blue/gray gradients
