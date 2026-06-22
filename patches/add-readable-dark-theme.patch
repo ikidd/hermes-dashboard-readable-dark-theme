@@ -1,0 +1,178 @@
+diff --git a/.hermes/dashboard-themes/readable-dark.yaml b/.hermes/dashboard-themes/readable-dark.yaml
+new file mode 100644
+index 0000000..583f6c9
+--- /dev/null
++++ b/.hermes/dashboard-themes/readable-dark.yaml
+@@ -0,0 +1,172 @@
++name: readable-dark
++label: Readable Dark
++description: Neutral dark theme with subtle slate gradients, strong contrast, 25% larger system fonts, no grain, no novelty fonts.
++
++palette:
++  background:
++    hex: "#111827"
++    alpha: 1
++  midground:
++    hex: "#f3f4f6"
++    alpha: 1
++  foreground:
++    hex: "#ffffff"
++    alpha: 0
++  warmGlow: "rgba(59, 130, 246, 0.10)"
++  noiseOpacity: 0
++
++typography:
++  fontSans: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
++  fontMono: 'ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace'
++  baseSize: "20px"
++  lineHeight: "1.55"
++  letterSpacing: "0"
++
++layout:
++  radius: "0.5rem"
++  density: comfortable
++
++terminalBackground: "#111827"
++
++colorOverrides:
++  card: "#182235"
++  cardForeground: "#f3f4f6"
++  popover: "#182235"
++  popoverForeground: "#f3f4f6"
++  primary: "#60a5fa"
++  primaryForeground: "#08111f"
++  secondary: "#243044"
++  secondaryForeground: "#f1f5f9"
++  muted: "#263246"
++  mutedForeground: "#d1d5db"
++  accent: "#334155"
++  accentForeground: "#ffffff"
++  border: "#64748b"
++  input: "#64748b"
++  ring: "#93c5fd"
++  destructive: "#f87171"
++  destructiveForeground: "#111827"
++  success: "#4ade80"
++  warning: "#fde047"
++
++seriesColors:
++  inputTokenAccent: "#60a5fa"
++  outputTokenAccent: "#4ade80"
++
++componentStyles:
++  backdrop:
++    fillerOpacity: "0"
++    bgBlendMode: "normal"
++    fillerBlendMode: "normal"
++    backgroundSize: "cover"
++  card:
++    boxShadow: "0 1px 0 rgba(255,255,255,0.06), 0 14px 40px rgba(0,0,0,0.22)"
++  page:
++    background: "linear-gradient(135deg, #141e30 0%, #182235 45%, #101827 100%)"
++
++customCSS: |
++  :root {
++    --background: #111827 !important;
++    --background-base: #111827 !important;
++    --midground: #f3f4f6 !important;
++    --midground-base: #f3f4f6 !important;
++    --foreground: transparent !important;
++    --foreground-base: #ffffff !important;
++    --warm-glow: rgba(59, 130, 246, 0.10) !important;
++    --noise-opacity-mul: 0 !important;
++
++    --text-primary: #ffffff !important;
++    --text-secondary: #e5e7eb !important;
++    --text-tertiary: #d1d5db !important;
++    --text-disabled: #9ca3af !important;
++    --text-display: #ffffff !important;
++    --text-on-accent: #08111f !important;
++
++    --color-foreground: #f3f4f6 !important;
++    --color-card: #182235 !important;
++    --color-card-foreground: #f3f4f6 !important;
++    --color-popover: #182235 !important;
++    --color-popover-foreground: #f3f4f6 !important;
++    --color-primary: #60a5fa !important;
++    --color-primary-foreground: #08111f !important;
++    --color-secondary: #243044 !important;
++    --color-secondary-foreground: #f1f5f9 !important;
++    --color-muted: #263246 !important;
++    --color-muted-foreground: #d1d5db !important;
++    --color-accent: #334155 !important;
++    --color-accent-foreground: #ffffff !important;
++    --color-border: #64748b !important;
++    --color-input: #64748b !important;
++    --color-ring: #93c5fd !important;
++    --color-warning: #fde047 !important;
++    --color-success: #4ade80 !important;
++    --color-destructive: #f87171 !important;
++  }
++
++  html, body, #root {
++    background: #111827 !important;
++    color: #f3f4f6 !important;
++  }
++
++  body::before {
++    content: "";
++    position: fixed;
++    inset: 0;
++    z-index: 0;
++    pointer-events: none;
++    background:
++      radial-gradient(circle at 18% 0%, rgba(96, 165, 250, 0.16) 0, rgba(96, 165, 250, 0.08) 24rem, transparent 46rem),
++      radial-gradient(circle at 100% 22%, rgba(148, 163, 184, 0.12) 0, rgba(148, 163, 184, 0.05) 22rem, transparent 44rem),
++      linear-gradient(135deg, #172033 0%, #1f2937 42%, #111827 100%);
++  }
++
++  /* Keep actual app content above the page gradient. */
++  #root {
++    position: relative;
++    z-index: 1;
++  }
++
++  /* Give legacy panels a real dark-page surface instead of flat black. */
++  .bg-background,
++  .bg-background-base,
++  [class*="bg-background/"] {
++    background-color: rgba(17, 24, 39, 0.82) !important;
++  }
++
++  .bg-card {
++    background: linear-gradient(180deg, #1d293b 0%, #182235 100%) !important;
++  }
++
++  .bg-secondary,
++  [class*="bg-secondary/"] {
++    background-color: rgba(36, 48, 68, 0.82) !important;
++  }
++
++  .bg-muted,
++  [class*="bg-muted/"] {
++    background-color: rgba(38, 50, 70, 0.82) !important;
++  }
++
++  /* Kill decorative texture/noise/filler. */
++  .grain::after,
++  .theme-default-filler {
++    display: none !important;
++  }
++
++  /* Kill novelty/display fonts from the design system. */
++  .font-mondwest,
++  .font-rules,
++  .font-rules-expanded,
++  .font-collapse,
++  .text-display,
++  [class*="font-mondwest"],
++  [class*="font-rules"],
++  [class*="font-collapse"] {
++    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
++    letter-spacing: 0 !important;
++    text-transform: none !important;
++  }
++
++  .blend-lighter {
++    mix-blend-mode: normal !important;
++  }
